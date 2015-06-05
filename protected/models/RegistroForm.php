@@ -15,6 +15,7 @@ class RegistroForm extends CFormModel
 	public $telefono;
 	public $celular;
 	public $email;
+    public $email_confirmacion;
 	public $direccion;
 	public $area;
 	public $trayectoria;
@@ -40,8 +41,9 @@ class RegistroForm extends CFormModel
 			array('numeroIntegrantes, cedula, telefono, celular', 'numerical', 'integerOnly' => true),
 			array('username', 'unique', 'className'=>'Usuarios', 'message'=>"El {attribute} \"{value}\" Ya se encuentra registrado"),
 			array('email', 'unique', 'className'=>'Propuestas', 'message'=>"El {attribute} \"{value}\" Ya se encuentra registrado"),
-			array('web', 'safe'),			
-			array('web', 'url', 'defaultScheme'=>'http', 'message'=>'El {attribute} no es una URL válida'),
+            array("email", "compare", "compareAttribute" => "email_confirmacion"),
+			array('web,email_confirmacion', 'safe'),			
+			array('web,video,twitter,fb', 'url', 'defaultScheme'=>'http', 'message'=>'El {attribute} no es una URL válida'),
 			array('username','match', 'allowEmpty'=>false,'pattern'=>'/^[a-zA-Z0-9_\\_\ü]+$/', 'message'=>"El  {attribute} no es válido. No puede contener Espacios ni caracteres especiales.")
 		); 
 	}
@@ -76,6 +78,7 @@ class RegistroForm extends CFormModel
 			'telefono'=>'Número telefónico fijo del representante',
 			'celular'=>'Numéro celular del representante',
 			'email'=>'Correo electrónico del representante que revise constantemente.',
+            'email_confirmacion'=>'Por favor, ingrese de nuevo la dirección de correo electrónico del representante.',
 			'direccion'=>'Dirección de correspondencia física del representante',
 			'area'=>'Tipo de propuesta artística',
 			'trayectoria'=>'Defina el tiempo total de experiencia que la agrupación o proyecto artístico lleva trabajando junta.',
@@ -106,6 +109,7 @@ class RegistroForm extends CFormModel
 			'telefono'=>'Teléfono Fijo',
 			'celular'=>'Teléfono Celular',
 			'email'=>'Correo',
+            'email_confirmacion'=>'Confirmar Correo',
 			'direccion'=>'Dirección',
 			'area'=>'Área',
 			'trayectoria'=>'Trayectoria',

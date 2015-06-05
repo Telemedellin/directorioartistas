@@ -56,8 +56,10 @@ class ConvocatoriaController extends Controller
 		$upload_handler = new UploadHandler($data, true, $messages);		
 	}
 
-	public function actionFotos(){		
-		if(isset(Yii::app()->session['dir'])){
+	public function actionFotos()
+    {
+		if(isset(Yii::app()->session['dir']))
+        {
 			$dir = Yii::app()->session['dir'];
 		}
 
@@ -173,9 +175,11 @@ class ConvocatoriaController extends Controller
 		}
 
 		$subgenero = (isset($_POST["subgenero"])) ? $_POST["subgenero"] : NULL;
+        $otrosOtro = (isset($_POST["otrosOtro"])) ? $_POST["otrosOtro"] : NULL;
 		//OJO: Verificar que llegue el checkbox de la página anterior (convocatoria)
 		//o en su defecto los datos del formulario para validar
 		$objFormularioRegistro = new RegistroForm();
+        //print_r($_POST['RegistroForm']);
 		if(isset($_POST['RegistroForm'])){
 			$objFormularioRegistro->attributes = $_POST['RegistroForm'];
 			if(isset(Yii::app()->session['dir'])){
@@ -335,6 +339,7 @@ class ConvocatoriaController extends Controller
 		$this->pageTitle ="Registro Artístas";
 		$this->render('registro', array(
 				'subgenero'  => $subgenero,
+                'otrosOtro' => $otrosOtro,
 				'formulario' => $objFormularioRegistro
 			));
 	}

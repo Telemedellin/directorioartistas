@@ -54,7 +54,7 @@ return array(
 				'<cat:(musica|otras-artes)>/<genero:[\w\-]+>'	=> 'directorio/listar',
 				'<cat:(musica|otras-artes)>/<genero:[\w\-]+>/<artista:[\w\d\-]+>'=> 'directorio/ver',
 				'<cat:(danza|teatro)>/<artista:[\w\d\-]+>'		=> 'directorio/ver',
-				//'convocatoria'									=> 'convocatoria',
+				'convocatoria'									=> 'convocatoria',
 				'busqueda' 										=> 'directorio/busqueda',
 				'contactar'										=> 'directorio/contactar',
 				'<controller:\w+>/<id:\d+>'						=> '<controller>/view',
@@ -69,10 +69,10 @@ return array(
 		// uncomment the following to use a MySQL database
 		*/
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=director_dirarti',
+			'connectionString' => 'mysql:host=localhost;dbname=directorioartistas',
 			'emulatePrepare' => true,
 			'username' => 'root'/*'director_dirarti'*/,
-			'password' => 'mysql'/*');ZvAB=yl@Ko'*/,
+			'password' => ''/*');ZvAB=yl@Ko'*/,
 			'charset' => 'utf8',
 		),
 		'errorHandler'=>array(

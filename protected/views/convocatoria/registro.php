@@ -92,6 +92,16 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 						<?php echo $form->error($formulario, 'email') ?>						
 					</div>
 				</div>
+                <div class="control-group <?php if($form->error($formulario, 'email_confirmacion')) echo ' error' ?>">
+                    <?php echo $form->label($formulario, "email_confirmacion", array("class"=>"control-label")) ?>
+                    <div class="controls">
+                        <i class="icon-privado"></i>
+                        <div class="input-append">              
+                            <?php echo $form->emailField($formulario, "email_confirmacion", array("rel"=>"popover", "data-original-title"=>$formulario->getAttribute('email_confirmacion'), "data-content"=>$formulario->getTooltip('email_confirmacion'))) ?>
+                        </div>
+                        <?php echo $form->error($formulario, 'email_confirmacion') ?>                        
+                    </div>
+                </div>
 				<div class="control-group <?php if($form->error($formulario, 'direccion')) echo ' error' ?>">
 					<?php echo $form->label($formulario, "direccion", array("class"=>"control-label")) ?>
 					<div class="controls">
@@ -170,14 +180,17 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					<div class="control-group">
 						<label for="" class="control-label">Seleccione:</label>
 						<div class="controls">
-							<select name="subgenero" id="otrosOtro">								
-								<option>Humor</option>
-								<option>Magia</option>
-								<option>Clown</option>
-								<option>Malabarismo</option>
-								<option>Mimos</option>
-								<option>Cuentería</option>
-							</select>
+                            <?php echo CHtml::dropDownList('otrosOtro', $otrosOtro, 
+                                 array(  'Humor' => 'Humor',
+                                         'Magia' => 'Magia',
+                                         'Clown' => 'Clown',
+                                         'Malabarismo' => 'Malabarismo',
+                                         'Mimos' => 'Mimos',
+                                         'Cuenteria' => 'Cuentería'
+                                         ),
+                                      array('empty' => 'Seleccione una opción')
+                                      );
+                             ?>
 						</div>						
 					</div>					
 				</div>										
@@ -285,7 +298,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					<?php echo $form->label($formulario, "twitter", array("class"=>"control-label")) ?>
 					<div class="controls">
 						<div class="input-prepend">              
-							<span class="twitter"></span>
+							<span class="add-on">http://</span>
 							<?php echo $form->textField($formulario, "twitter", array("class"=>"input-xlarge","rel"=>"popover", "data-original-title"=>$formulario->getAttribute('twitter'), "data-content"=>$formulario->getTooltip('twitter'))) ?>
 						</div>
 						<?php echo $form->error($formulario, 'twitter') ?>
@@ -295,7 +308,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 					<?php echo $form->label($formulario, "fb", array("class"=>"control-label")) ?>
 					<div class="controls">
 						<div class="input-prepend">              
-							<span class="facebook"></span>
+							<span class="add-on">http://</span>
 							<?php echo $form->textField($formulario, "fb", array("class"=>"input-xlarge","rel"=>"popover", "data-original-title"=>$formulario->getAttribute('fb'), "data-content"=>$formulario->getTooltip('fb'))) ?>
 						</div>
 						<?php echo $form->error($formulario, 'fb') ?>
@@ -355,11 +368,236 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 			</fieldset>					
 				<div class="form-actions">
 					<?php echo CHtml::submitButton('Enviar mi propuesta', array("class"=>"btn btn-large")) ?>
-				</div>																																																																									
+				</div>
+                <div class="modal fade hide" id="modalConfirmacion" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">Ventana de confirmación</h4>
+                                <p>
+                                    Por favor, revise que la información que haya ingresado esté correcta, luego de dar click en el botón enviar, no podrá cambiarla.
+                                </p>
+                            </div>
+                            <div class="modal-body">
+                                <div style="margin-left:20px;">
+                                    <table class="table">
+                                        <tr>
+                                            <td>
+                                                <p id="usuario">Nombre de usuario: <span></span></p>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon icon-ok-sign"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p id="password">Contraseña: <span></span></p>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon icon-ok-sign"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p id="nombre-propuesta">Nombre de la propuesta: <span></span></p>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon icon-ok-sign"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p id="representante">Nombre del representante: <span></span></p>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon icon-ok-sign"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p id="cedula">Cédula: <span></span></p>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon icon-ok-sign"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p id="telefono">Teléfono fijo: <span></span></p>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon icon-ok-sign"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p id="celular">Teléfono celular: <span></span></p>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon icon-ok-sign"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p id="correo">Correo: <span></span></p>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon icon-ok-sign"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p id="correo-confirmacion">Confirmación del correo: <span></span></p>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon icon-ok-sign"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p id="direccion">Dirección residencial: <span></span></p>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon icon-ok-sign"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p id="area">Area (Música, Danza, Teatro u Otro): <span></span></p>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon icon-ok-sign"></span>
+                                            </td>
+                                        </tr>
+                                        <tr class="hide">
+                                            <td>
+                                                <p id="genero">Genero músical: <span></span></p>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon icon-ok-sign"></span>
+                                            </td>
+                                        </tr>
+                                        <tr class="hide">
+                                            <td>
+                                                <p id="audios">2 canciones: <span></span></p>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon icon-ok-sign"></span>
+                                            </td>
+                                        </tr>
+                                        <tr class="hide">
+                                            <td>
+                                                <p id="otro-categoria">Categoría (Humor, Magia, Clown, Malabarismo, Mimos o Cuentería): <span></span></p>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon icon-ok-sign"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p id="trayectoria">Trayectoria: <span></span></p>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon icon-ok-sign"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p id="integrantes">Numero de integrantes: <span></span></p>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon icon-ok-sign"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p id="resena">Reseña: <span></span></p>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon icon-ok-sign"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p id="foto-perfil">Foto de perfil: <span></span></p>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon icon-ok-sign"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p id="foto-adicional">Fotos adicionales: <span></span></p>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon icon-ok-sign"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p id="video">Video: <span></span></p>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon icon-ok-sign"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p id="twitter">Twitter: <span></span></p>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon icon-ok-sign"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p id="facebook">Facebook: <span></span></p>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon icon-ok-sign"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p id="web">Sitio web: <span></span></p>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon icon-ok-sign"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p id="valor">Valor: <span></span></p>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon icon-ok-sign"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p id="rider">Rider: <span></span></p>
+                                            </td>
+                                            <td>
+                                                <span class="glyphicon icon-ok-sign"></span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <ul>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" id="confirmar" class="btn btn-warning">Confirmar</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">Cancelar</button>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
 		<?php $this->endWidget(); ?>	
 	</div>		
 </div>
-
 <script id="template-upload" type="text/x-tmpl">
 {% for (var i=0, file; file=o.files[i]; i++) { %}
     <tr class="template-upload fade">
