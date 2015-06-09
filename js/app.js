@@ -1,4 +1,5 @@
 $(function() {
+
 	var PUBLIC_PATH = $("#PUBLIC_PATH").val();
     var directorio = $("#dir").val();
 
@@ -432,8 +433,7 @@ $(function() {
     }).done(function (result) {
         $(this).fileupload('option', 'done')
             .call(this, null, {result: result});
-    });   
-
+    });
 
     $('#rider').fileupload({
         // Uncomment the following to send cross-domain cookies:
@@ -477,5 +477,9 @@ $(function() {
         $(this).fileupload('option', 'done')
             .call(this, null, {result: result});
     });       
- 	
+
+    $('#fotoPerfil table tbody.files').empty();
+    $('#fotos table tbody.files').empty();
+    $('#audio table tbody.files').empty();
+    $('#rider table tbody.files').empty();
 });

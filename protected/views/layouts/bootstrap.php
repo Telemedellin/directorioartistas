@@ -31,29 +31,30 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/js
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
   </head>
   <body>
-    <header>
-      <h1><?php echo CHtml::link( CHtml::image(Yii::app()->request->baseUrl . '/images/logo_feria_medium.png', 'Feria de las flores Medellín, 2 al 11 de agosto de 2014', array('width' => 219, 
-'height' => 197)), CHtml::normalizeUrl(Yii::app()->homeUrl) ) ?></h1>
-      <div class="logos">
-       <!-- <?php echo CHtml::link( CHtml::image(Yii::app()->request->baseUrl . '/images/logo_bureau_medium.png', 'Medellín convention & visitors bureau', array('width' => 100, 'height' => 69)) , CHtml::normalizeUrl('http://www.medellinconventionbureau.com'), array('target' => '_blank') )  ?>-->
-        <?php echo CHtml::link( CHtml::image(Yii::app()->request->baseUrl . '/images/logo_alcaldia_medium.png', 'Alcaldía de Medellín', array('width' => 100, 'height' => 69)) , 
-CHtml::normalizeUrl('http://www.medellin.gov.co'), array('target' => '_blank') ) ?>
-        <?php echo CHtml::link( CHtml::image(Yii::app()->request->baseUrl . '/images/galleta_logo.png', 'Medellín, un hogar para la vida', array('width' => 316, 'height' => 166)) , CHtml::normalizeUrl('http://www.medellin.gov.co'), array('target' => '_blank', 'class' => 'galleta') ) ?>
-      </div>
-      <div class="fechas">
+  <header>
+    <div id="new-header">
+        <h1>
+            <?php echo CHtml::link( CHtml::image(Yii::app()->request->baseUrl . '/images/logo.png', 'Feria de las flores Medellín, 2 al 11 de agosto de 2015', array('id' => 'new-logo', 'width' => 219, 'height' => 197)), CHtml::normalizeUrl(Yii::app()->homeUrl) ) ?>
+        </h1>
+        <h1>
+            <?php echo CHtml::link( CHtml::image(Yii::app()->request->baseUrl . '/images/logos-alc.png', 'Alcaldia de Medellín', array('id' => 'new-alcaldia')), CHtml::normalizeUrl(Yii::app()->homeUrl) ) ?>
+        </h1>
+    </div>
+    <span id="addon-logo"></span>
+    <div class="fechas">
         <div>
-          28 de mayo al 10 de junio de 2014
-          <strong class="prev">Inicio de invitaci&oacute;n</strong>
+            9 de junio al 26 de junio de 2015
+            <strong class="prev">Inicio de invitaci&oacute;n</strong>
         </div>
         <div>
-          11 de junio al 6 de julio de 2014
-          <strong class="next">Evaluaci&oacute;n</strong>
+            27 de junio al 9 de julio de 2015
+            <strong class="next">Evaluaci&oacute;n</strong>
         </div>
         <div>
-          7 de julio de 2014
-          <strong class="current">Publicaci&oacute;n de resultados</strong>
+            10 de julio de 2015
+            <strong class="current">Publicaci&oacute;n de resultados</strong>
         </div>
-      </div>
+    </div>
     </header>
     <div class="container">
       <?php echo $content ?>
@@ -69,6 +70,12 @@ CHtml::normalizeUrl('http://www.medellin.gov.co'), array('target' => '_blank') )
     ga('create', 'UA-41382664-3', 'directorioartisticomedellin.com');
     ga('send', 'pageview');
 
-  </script> 
+  </script>
   </body>
 </html>
+<script>
+    jQuery('#fotoPerfil table tbody.files').empty();
+    jQuery('#fotos table tbody.files').empty();
+    jQuery('#audio table tbody.files').empty();
+    jQuery('#rider table tbody.files').empty();
+</script>

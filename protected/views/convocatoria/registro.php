@@ -131,7 +131,7 @@ Yii::app()->clientScript->registerCssFile(Yii::app()->request->baseUrl.'/css/jqu
 							<?php echo CHtml::dropDownList('subgenero', $subgenero, 
 	    				         array(	'Tropical' => 'Tropical',
 	    				         		'Popular Tradicional' => 'Popular Tradicional (Corridos, Andina, Pacífico, Atlántico, Llanera)',
-	    				         		'Urbana' => 'Popular Urbana (Rock, Ska, Pop, Reggae, Regaeton, Hip Hop, Cancionistas)',
+	    				         		'Urbana' => 'Popular Urbana (Rock, Ska, Pop, Reggae, Regaeton, Hip Hop, Cancionistas y Vallenato)',
 	    				         		'Clásica' => 'Clásica',
 	    				         		'Folclor' => 'Folclor',
 	    				         		'Jazz y músicas del mundo' => 'Jazz y músicas del mundo',

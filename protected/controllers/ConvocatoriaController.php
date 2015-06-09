@@ -174,8 +174,8 @@ class ConvocatoriaController extends Controller
 			Yii::app()->session['dir'] = md5(time());
 		}
 
-		$subgenero = (isset($_POST["subgenero"])) ? $_POST["subgenero"] : NULL;
-        $otrosOtro = (isset($_POST["otrosOtro"])) ? $_POST["otrosOtro"] : NULL;
+		$subgenero = (isset($_POST["subgenero"])) ? $_POST["subgenero"] : null;
+        $otrosOtro = (isset($_POST["otrosOtro"])) ? $_POST["otrosOtro"] : null;
 		//OJO: Verificar que llegue el checkbox de la página anterior (convocatoria)
 		//o en su defecto los datos del formulario para validar
 		$objFormularioRegistro = new RegistroForm();
@@ -310,7 +310,7 @@ class ConvocatoriaController extends Controller
 				$objPropuesta->video              = $objFormularioRegistro->video;
 				$objPropuesta->estado             = 1;
 				$objPropuesta->valor_presentacion = $objFormularioRegistro->valor;
-				$objPropuesta->subgenero          = $subgenero;
+				$objPropuesta->subgenero          = empty($subgenero) ? $otrosOtro : $subgenero;
 
 				if(is_dir(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/rider/')){
 					$directorio=dir(Yii::getPathOfAlias('webroot').'/files/' . $dir . '/rider/'); 

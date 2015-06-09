@@ -4,7 +4,7 @@
 			<strong>La Alcaldía de Medellín, a través de la Secretaría de Cultura Ciudadana, invita a los artistas, entidades y agrupaciones locales a inscribir sus propuestas en el proceso de selección para la programación de la Feria de las Flores 2015.</strong>
 		</p>
 		<p>
-			Entre los participantes se elegirán las mejores propuestas que desde la música, el teatro, la danza, el humor, la cuentería, la magia y otras disciplinas artísticas, harán parte de la programación oficial del evento.
+			Entre los participantes se elegirán las mejores propuestas evaluadas , que desde la música, el teatro, la danza, el humor, la cuentería, la magia y otras disciplinas artísticas, harán parte de la programación oficial del evento.
 		</p>
 		<p>
 			Los interesados deben inscribirse en el <strong>Directorio Artístico de Medellín</strong>, diligenciando un <strong>Formulario en Línea</strong> al que podrán acceder desde el ícono que se encuentra al final de esta página.
@@ -18,7 +18,7 @@
 				Esta inscripción es <strong>exclusiva</strong> para agrupaciones, artistas y organizaciones culturales que tengan sede o desarrollen sus actividades en uno de los municipios del <strong>Área Metropolitana del Valle de Aburrá</strong>, Propuestas de otras ciudades o países no serán tenidas en cuenta.
 			</li>
 			<li>
-				Las inscripciones se abrirán el <strong>Martes 9 de junio a las 12 del medio día y se cerrarán el 26 de junio de 2015 a las 6:00 p.m.</strong> hora legal colombiana <a href="http://horalegal.sic.gov.co" taget="_blank" title="Ver la hora legal Colombiana">(UTC -5)</a>. Solo se recibirán propuestas por este medio.
+				Las inscripciones se abrirán el <strong>Martes 9 de junio a las 5 p.m. y se cerrarán el 26 de junio de 2015 a las 6:00 p.m.</strong> hora legal colombiana <a href="http://horalegal.sic.gov.co" taget="_blank" title="Ver la hora legal Colombiana">(UTC -5)</a>. Solo se recibirán propuestas por este medio.
 			</li>
 			<li>
 				En caso de tener dudas sobre la metodología, condiciones y mecánica de participación en la invitación, escribir a <a href="mailto:info@merlinproducciones.co" target="_blank">info@merlinproducciones.co</a>
@@ -31,7 +31,7 @@
 			</li>
 			<li>
 				El resultado con las propuestas escogidas para la programación, se publicará el día 
-				<strong>15 de julio de 2015</strong>, en la página web de la <a href="http://www.medellin.gov.co" taget="_blank" title="Ir al portal de la alcaldía de Medellín">Alcaldía de Medellín</a> y en el portal de Feria de las Flores.
+				<strong>10 de julio de 2015</strong>, en la página web de la <a href="http://www.medellin.gov.co" taget="_blank" title="Ir al portal de la alcaldía de Medellín">Alcaldía de Medellín</a> y en el portal de Feria de las Flores.
 			</li>
 			<li>
 				En todo momento, usted podrá saber cuáles y cuántas propuestas están inscritas, consultando el catálogo en línea del Directorio Artístico de Medellín, al que podrá acceder desde el ícono que encontrará al final de esta página.
@@ -53,13 +53,13 @@
 			    <strong>Parque Cultural Nocturno:</strong> Se realizará en el Parque de los Pies Descalzos durante cinco noches. Allí se programarán <strong>5 artistas locales</strong> (uno por cada noche).
 			</li>
 			<li>
-				<strong>Festival Nacional de la Trova (Ciudad de Medellin):</strong> Se realizarán dos semifinales en la Plaza Gardel, del aeropuerto Olaya Herrera, y la gran final en el Parque de los Pies Descalzos. Para estas tres jornadas se programarán en total <strong>seis artístas locales</strong>, dos por cada día.
+				    <strong>Festival Nacional de la Trova (Ciudad de Medellin):</strong> Se realizarán dos semifinales en la Plaza Gardel, del aeropuerto Olaya Herrera, y la gran final en el Parque de los Pies Descalzos. Para estas tres jornadas se programarán en total <strong>6 artístas locales</strong>, dos por cada día.
 			</li>
 			<li>
 				<strong>Zona que Suena:</strong> Se realizará en <strong>Parque Norte</strong>. Contará con la participación de  agrupaciones musicales, elencos de danza,  propuestas artísticas entre clown, malabarismo, magia, circo y cuenteros; para un total de <strong>10 artistas o agrupaciones locales programados</strong>.
 			</li>
 			<li>
-				<strong>Escenarios artísticos culturales:</strong> Son siete escenarios ubicados en los corregimientos de San Cristóbal, Altavista, San Sebastián de Palmitas, Santa Elena, San Antonio de Prado y dos barrios Castilla y San Javier. En cada uno se programarán: comparsas, teatro, y música de diferentes géneros. En total, serán <strong>35 artistas locales programados</strong> en éstos escenarios.
+				<strong>Escenarios artísticos culturales:</strong> Son 7 escenarios ubicados en los corregimientos de San Cristóbal, Altavista, San Sebastián de Palmitas, Santa Elena, San Antonio de Prado y dos barrios Castilla y San Javier. En cada uno se programarán: comparsas, teatro, y música de diferentes géneros. En total, serán <strong>28 artistas locales programados</strong> en éstos escenarios.
 			</li>
 		</ul>
 
